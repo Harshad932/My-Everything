@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hearty</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      height: 100vh;
+      background: url("bg22.jpg");
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      background-color: #f8f8f8;
+    }
+
+    .heart-container {
+      display: none;
+      position: relative;
+      animation: heartbeat 1s infinite;
+    }
+
+    .heart {
+      font-size: 200px;
+      color: #ff5e62;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .heart:hover {
+      transform: scale(1.1);
+      animation: none;
+      /* Pause the heartbeat on hover */
+    }
+
+    @keyframes heartbeat {
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.1);
+      }
+    }
+
+    #demo {
+      text-align: center;
+      color: #ff0000;
+      overflow-wrap: break-word;
+      /* Allow wrapping */
+      max-width: 100%;
+      /* Ensure the text doesn't overflow the viewport */
+      font-family: "Bellota Text", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+    }
+
+    .tdiv {
+      margin-left: 300px;
+      margin-right: 300px;
+    }
+
+    @media screen and (max-width: 600px) {
+      /* Adjust margin for mobile devices */
+      .tdiv {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+
+  </style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bellota+Text:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+</head>
+
+<body onload="typeWriter()">
+
+  <div class="tdiv">
+    <p id="demo"></p>
+  </div>
+  <div class="heart-container">
+    <div class="heart" onclick="redirect()">❤️</div>
+  </div>
+
+  <script>
+    var i = 0;
+    var txt = "This is a dream come true movement for me.I don't care what will be the result just click on the heart🥹🥹";
+    var speed = 100;
+
+    function typeWriter() {
+      if (i < txt.length) {
+        document.getElementById("demo").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      } else {
+        // When the entire text is visible, show the heart container
+        document.querySelector(".heart-container").style.display = "block";
+      }
+    }
+
+    function redirect() {
+      window.location.href = "fdct.html";
+    }
+
+  </script>
+
+</body>
+
+</html>

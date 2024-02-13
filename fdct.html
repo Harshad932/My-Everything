@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plz say Yes!!</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    @media screen and (min-width: 600px) {
+      /* Adjust for larger screens */
+      video {
+        width: 100vw;
+        height: 100vh;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <video controls id="myVideo">
+    <source src="padh.mp4" type="video/mp4">
+  </video>
+</body>
+
+
+
+<script>
+
+    var videoElement = document.getElementById("myVideo");
+    videoElement.addEventListener("ended", function() {
+      
+      alert("Sorry but you were pranked mahatari!!😂😂.Plz don't take it seriously there was no intention to heart you ,It was just a Prank.");
+    });
+
+  </script>
+
+</html>
